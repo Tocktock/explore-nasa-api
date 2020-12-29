@@ -2,11 +2,11 @@
   "name": "with-typescript",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next",
+    "dev": "npm run watch:css && next",
     "build": "npm run watch:css && next build",
     "start": "npm run watch:css && next start",
     "type-check": "tsc",
-    "watch:css": "postcss assets/tailwind.css -o assets/main.css"
+    "watch:css": "postcss assets/style/tailwind.css -o assets/style//main.css"
   },
   "dependencies": {
     "next": "^10.0.4",
@@ -20,6 +20,7 @@
     "autoprefixer": "^10.1.0",
     "postcss": "^8.2.1",
     "postcss-cli": "^8.3.1",
+    "postcss-loader": "^4.1.0",
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "^2.0.2",
     "typescript": "4.0"
