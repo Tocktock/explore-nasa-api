@@ -4,46 +4,70 @@ import Card from "../components/Card/Card";
 
 const IndexPage = () => {
   const slider = useRef<HTMLDivElement>();
-
+  const baseCardSize = 64;
   const moveLeft = () => {
     let marginLeftNow = slider.current!.style.marginLeft
       ? Number.parseInt(slider.current!.style.marginLeft)
       : 0;
-    console.log(marginLeftNow);
-    marginLeftNow = marginLeftNow === 0 ? -320 : marginLeftNow;
-    slider.current!.style.marginLeft = marginLeftNow + 64 + "rem";
+    marginLeftNow = marginLeftNow === 0 ? -baseCardSize * 5 : marginLeftNow;
+    slider.current!.style.marginLeft = marginLeftNow + baseCardSize + "rem";
   };
 
   const moveRight = () => {
     let marginLeftNow = slider.current!.style.marginLeft
       ? Number.parseInt(slider.current!.style.marginLeft)
       : 0;
-    console.log(marginLeftNow);
-    marginLeftNow = marginLeftNow === -256 ? 64 : marginLeftNow;
-    slider.current!.style.marginLeft = marginLeftNow + -64 + "rem";
+    marginLeftNow =
+      marginLeftNow === -baseCardSize * 4 ? baseCardSize : marginLeftNow;
+    slider.current!.style.marginLeft = marginLeftNow + -baseCardSize + "rem";
   };
 
   return (
-    <div className="w-screen h-screen flex flex-col">
-      <div className="w-512 h-256 m-auto flex items-center place-content-center">
-        <i
-          onMouseUp={moveLeft}
-          className="cursor-pointer text-3xl m-3 fas fa-arrow-left"
-        ></i>
-        <div className="flex w-256 h-128 overflow-hidden">
-          <div ref={slider} className="duration-300 relative flex h-64">
-            <Card title="Slide 1" bgcolor="bg-red-200" />
-            <Card title="Slide 2" bgcolor="bg-blue-200" />
-            <Card title="Slide 3" bgcolor="bg-gray-200" />
-            <Card title="Slide 4" bgcolor="bg-green-200" />
-            <Card title="Slide 5" bgcolor="bg-yellow-200" />
-          </div>
+    <div className="w-screen h-192 m-auto flex items-center place-content-center bg-gray-900">
+      <i
+        onMouseUp={moveLeft}
+        className="cursor-pointer text-coolBlue text-3xl m-3 fas fa-arrow-left"
+      ></i>
+      <div className="flex w-256 h-176 overflow-hidden">
+        <div ref={slider} className="duration-300 relative flex w-256 h-176">
+          <Card
+            title="APOD"
+            imgUrl="/imgs/Trifid_HubbleMehla_1024.jpg"
+            description="You Can See the Beautiful Daily Space Photograph"
+            imgWidth={1024}
+            imgHeight={611}
+            targetUrl="apod"
+          />
+          <Card
+            title="Slide 2"
+            imgUrl="/imgs/Trifid_HubbleMehla_1024.jpg"
+            imgWidth={1024}
+            imgHeight={611}
+          />
+          <Card
+            title="Slide 3"
+            imgUrl="/imgs/Trifid_HubbleMehla_1024.jpg"
+            imgWidth={1024}
+            imgHeight={611}
+          />
+          <Card
+            title="Slide 4"
+            imgUrl="/imgs/Trifid_HubbleMehla_1024.jpg"
+            imgWidth={1024}
+            imgHeight={611}
+          />
+          <Card
+            title="Slide 5"
+            imgUrl="/imgs/Trifid_HubbleMehla_1024.jpg"
+            imgWidth={1024}
+            imgHeight={611}
+          />
         </div>
-        <i
-          onMouseUp={moveRight}
-          className="cursor-pointer text-3xl m-3 fas fa-arrow-right"
-        ></i>
       </div>
+      <i
+        onMouseUp={moveRight}
+        className="cursor-pointer text-coolBlue text-3xl m-3 fas fa-arrow-right"
+      ></i>
     </div>
   );
 };

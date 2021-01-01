@@ -8,10 +8,12 @@ const globalApp = ({ Component, pageProps }: AppProps) => {
       <Head>
         <script
           src="https://kit.fontawesome.com/3d8fd185f5.js"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         ></script>
       </Head>
-      <Component {...pageProps} />{" "}
+      <div className="w-screen h-screen flex flex-col bg-black ">
+        <Component {...pageProps} />{" "}
+      </div>
     </>
   );
 };

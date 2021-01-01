@@ -9,6 +9,7 @@
     "watch:css": "postcss assets/style/tailwind.css -o assets/style//main.css"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "next": "^10.0.4",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"

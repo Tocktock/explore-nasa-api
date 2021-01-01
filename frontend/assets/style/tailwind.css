@@ -1,3 +1,11 @@
+
+/* Third Party CSS */
+@import url("https://fonts.googleapis.com/css2?family=Neuton&display=swap");
+
+/* Custom CSS */
+@import url("./loader.css");
+
+/* tailwindCSS */
 @tailwind base;
 
 @tailwind components;

@@ -1,0 +1,1 @@
+GET  https://api.nasa.gov/planetary/apod?api_key=mdBIpzOdV161Bm4oALh15sAfLpi1R6Mx275E1Jce&&date=2020-12-20 HTTP/1.1

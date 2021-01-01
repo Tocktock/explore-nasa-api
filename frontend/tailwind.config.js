@@ -26,6 +26,9 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+      coolBlue: {
+        DEFAULT: "#f1f6f9",
+      },
     },
     spacing: {
       px: "1px",
@@ -65,6 +68,10 @@ module.exports = {
       96: "24rem",
       116: "29rem",
       128: "32rem",
+      144: "36rem",
+      160: "40rem",
+      176: "44rem",
+      192: "48rem",
       256: "64rem",
       512: "128rem",
     },
@@ -208,6 +215,7 @@ module.exports = {
         '"Courier New"',
         "monospace",
       ],
+      neuton: ["Neuton", "serif"],
     },
     fontSize: {
       xs: ["0.75rem", { lineHeight: "1rem" }],
