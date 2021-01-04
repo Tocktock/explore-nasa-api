@@ -1,9 +1,8 @@
 import { useRef } from "react";
-import Image from "next/image";
 import Card from "../components/Card/Card";
 
 const IndexPage = () => {
-  const slider = useRef<HTMLDivElement>();
+  const slider = useRef<HTMLDivElement>(null);
   const baseCardSize = 64;
   const moveLeft = () => {
     let marginLeftNow = slider.current!.style.marginLeft

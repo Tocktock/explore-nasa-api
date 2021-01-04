@@ -10,7 +10,7 @@ const IndexPage = () => {
   const photoImgRef = useRef<HTMLImageElement>(null);
   const [data, setData] = useState<DataType>();
   const [isLoading, setisLoading] = useState<boolean>(false);
-  const fetchPhoto = (e) => {
+  const fetchPhoto = (e: React.ChangeEvent<HTMLInputElement>) => {
     // date check
     const nowDate = new Date();
     const selectedDate = new Date(e.target.value);
