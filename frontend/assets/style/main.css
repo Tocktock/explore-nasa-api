@@ -14825,6 +14825,10 @@ video {
   min-height: 0px;
 }
 
+.min-h-192{
+  min-height: 48rem;
+}
+
 .min-h-full{
   min-height: 100%;
 }
@@ -33381,6 +33385,21 @@ video {
           animation: bounce 1s infinite;
 }
 
+body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+#__next {
+  height: 100%;
+  width: 100%;
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;
@@ -47649,6 +47668,10 @@ video {
 
   .sm\:min-h-0{
     min-height: 0px;
+  }
+
+  .sm\:min-h-192{
+    min-height: 48rem;
   }
 
   .sm\:min-h-full{
@@ -80399,6 +80422,10 @@ video {
     min-height: 0px;
   }
 
+  .md\:min-h-192{
+    min-height: 48rem;
+  }
+
   .md\:min-h-full{
     min-height: 100%;
   }
@@ -113145,6 +113172,10 @@ video {
 
   .lg\:min-h-0{
     min-height: 0px;
+  }
+
+  .lg\:min-h-192{
+    min-height: 48rem;
   }
 
   .lg\:min-h-full{
@@ -145895,6 +145926,10 @@ video {
     min-height: 0px;
   }
 
+  .xl\:min-h-192{
+    min-height: 48rem;
+  }
+
   .xl\:min-h-full{
     min-height: 100%;
   }
@@ -178641,6 +178676,10 @@ video {
 
   .\32xl\:min-h-0{
     min-height: 0px;
+  }
+
+  .\32xl\:min-h-192{
+    min-height: 48rem;
   }
 
   .\32xl\:min-h-full{

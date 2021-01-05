@@ -11,7 +11,7 @@ const globalApp = ({ Component, pageProps }: AppProps) => {
           crossOrigin="anonymous"
         ></script>
       </Head>
-      <div className="w-screen h-screen flex flex-col bg-black ">
+      <div className="flex flex-col w-full h-full bg-black ">
         <Component {...pageProps} />{" "}
       </div>
     </>

@@ -3,11 +3,13 @@ import Loading from "../../components/Loading";
 interface DataType {
   dataType: string;
   url: string;
+  explanation: string;
 }
 const IndexPage = () => {
   const NASA_API_URL =
     "https://api.nasa.gov/planetary/apod?api_key=mdBIpzOdV161Bm4oALh15sAfLpi1R6Mx275E1Jce&&date=";
   const photoImgRef = useRef<HTMLImageElement>(null);
+  const explanationRef = useRef<HTMLParagraphElement>(null);
   const [data, setData] = useState<DataType>();
   const [isLoading, setisLoading] = useState<boolean>(false);
   const fetchPhoto = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,8 +33,11 @@ const IndexPage = () => {
         return res.json();
       })
       .then((v) => {
-        setData({ dataType: v.media_type, url: v.url });
-
+        setData({
+          dataType: v.media_type,
+          url: v.url,
+          explanation: v.explanation,
+        });
         return v;
       })
       .then((v) => {
@@ -52,8 +57,22 @@ const IndexPage = () => {
     photoImgRef.current!.className = "opacity-100 ";
   };
 
+  const showExplaination = () => {
+    if (isLoading) return;
+    const paragraphHegiht = explanationRef.current!.getBoundingClientRect()
+      .height;
+    explanationRef.current?.classList.add("opacity-100");
+    explanationRef.current!.style.bottom = paragraphHegiht + "px";
+  };
+
+  const hideExplaination = () => {
+    if (isLoading) return;
+    explanationRef.current?.classList.remove("opacity-100");
+    explanationRef.current!.style.bottom = 0 + "px";
+  };
+
   return (
-    <div className="w-screen h-192 m-auto flex flex-col items-center bg-gray-900">
+    <div className="overflow-y-auto w-full  m-auto flex flex-col items-center bg-gray-900">
       <div className="text-4xl font-bold mb-2 text-gray-500 font-neuton">
         <span>APOD</span>
       </div>
@@ -71,17 +90,29 @@ const IndexPage = () => {
           id="pick-date"
         />
       </label>
-      <div className="overflow-hidden">
+      <div className="my-2 min-h-192 max-h-full">
         {isLoading && <Loading />}
         {data?.dataType === "image" && (
-          <img
-            className="opacity-0"
-            ref={photoImgRef}
-            onLoad={renderImage}
-            src={data.url}
-            width={1024}
-            height={768}
-          ></img>
+          <div
+            className="relative flex cursor-pointer"
+            onMouseEnter={showExplaination}
+            onMouseLeave={hideExplaination}
+          >
+            <img
+              className="opacity-0 max-w-screen-lg"
+              ref={photoImgRef}
+              onLoad={renderImage}
+              src={data.url}
+            ></img>
+            {!isLoading && (
+              <p
+                ref={explanationRef}
+                className="absolute duration-200 bg-black opacity-0 font-thin text-lg left-0 bottom-0 z-10 text-coolBlue"
+              >
+                {data.explanation}
+              </p>
+            )}
+          </div>
         )}
       </div>
     </div>
