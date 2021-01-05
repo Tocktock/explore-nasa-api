@@ -31,15 +31,20 @@
 
 ## Experience
 
-<p style="color:gray;font-size:1.1rem;font-weight:400;">🛑🛑 BackEnd Part is Not Implemented You should run this command inside of "frontend" folder<p>
+<p style="color:gray;font-size:1.1rem;font-weight:400;">🛑🛑 BackEnd Part is Not Implemented You should run this command inside of "frontend" directory<p>
 
 clone this repository
 
     git clone https://github.com/Tocktock/explore-nasa-api.git
 
-then start server
+then local start server
 
     npm i install
     npm run dev
+
+if you want optimized version, then run this command
+
+    npm run build
+    npm run start
 
 If you go to <localhost:3000>, you can see beautiful NASA API. Enjoy it !!
